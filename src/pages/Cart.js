@@ -1,9 +1,18 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
+import ProductCard from '../components/ProductCard';
 
 const Cart = () => {
+    const cart = useSelector(state => state.cart);
+
     return (
-        <div>
-            <h1>This is cart!</h1>
+        <div className='grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 my-10'>
+            {
+                cart.map(product => <ProductCard
+                    key={product._id}
+                    product={product}
+                ></ProductCard>)
+            }
         </div>
     );
 };

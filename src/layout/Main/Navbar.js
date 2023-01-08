@@ -7,13 +7,13 @@ import { BiSearchAlt } from "react-icons/bi";
 const Navbar = () => {
 
     return (
-        <nav className='h-16 bg-indigo-200 rounded-full m-2 max-w-7xl mx-auto px-5'>
+        <nav className='h-14 bg-indigo-200 rounded-full m-2 max-w-7xl mx-auto px-5'>
             <ul className='h-full mx-auto flex justify-between items-center gap-3 font-semibold text-slate-900'>
                 <h1 className='text-slate-900 text-xl'>Moon Tech</h1>
-                <li className='flex bg-white mx-auto h-10 w-full max-w-lg  rounded-full pr-3'>
+                <li className='flex bg-white mx-auto h-8 w-full max-w-lg  rounded-full pr-3'>
                     <input
                         placeholder='Search'
-                        className='h-10 rounded-full w-full text-sm border-0 focus:ring-0 outline-none px-4'
+                        className='h-8 rounded-full w-full text-sm border-0 focus:ring-0 outline-none px-4'
                         type='text'
                         name='search'
                         id='search'
