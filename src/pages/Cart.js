@@ -8,10 +8,12 @@ const Cart = () => {
     return (
         <div className='grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 my-10'>
             {
-                cart.map(product => <ProductCard
-                    key={product._id}
-                    product={product}
-                ></ProductCard>)
+                cart
+                    .sort((a, b) => a._id - b._id)
+                    .map(product => <ProductCard
+                        key={product._id}
+                        product={product}
+                    ></ProductCard>)
             }
         </div>
     );
