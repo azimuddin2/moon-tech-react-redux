@@ -13,7 +13,6 @@ const productReducer = (state = initialState, action) => {
         product => product._id === action.payload._id
     );
 
-    console.log(selectedProduct);
 
     switch (action.type) {
         case ADD_TO_CART:
