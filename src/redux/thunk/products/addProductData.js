@@ -12,7 +12,7 @@ const addProductData = (product) => {
             }
         });
         const data = await res.json();
-        
+
         if (data.acknowledged) {
 
             dispatch(addProduct({
