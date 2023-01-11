@@ -1,18 +1,21 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import { useDispatch } from 'react-redux';
+import addProductData from '../../redux/thunk/products/addProductData';
 
 const AddProduct = () => {
-    const { register, handleSubmit } = useForm();
+    const { register, handleSubmit, reset } = useForm();
     const dispatch = useDispatch();
 
     const submit = (data) => {
 
         const product = {
             model: data.model,
+            image: data.image,
             brand: data.brand,
             status: data.status === "true" ? true : false,
             price: data.price,
+            rating: data.rating,
             keyFeature: [
                 data.keyFeature1,
                 data.keyFeature2,
@@ -22,6 +25,8 @@ const AddProduct = () => {
             spec: [],
         };
         console.log(product);
+        dispatch(addProductData(product))
+        reset()
     }
 
     return (
@@ -37,6 +42,7 @@ const AddProduct = () => {
                         type='text'
                         id='model'
                         {...register("model")}
+                        required
                     />
                 </div>
 
@@ -48,6 +54,7 @@ const AddProduct = () => {
                         name='image'
                         id='image'
                         {...register("image")}
+                        required
                     />
                 </div>
 
@@ -72,6 +79,7 @@ const AddProduct = () => {
                         name='price'
                         id='price'
                         {...register("price")}
+                        required
                     />
                 </div>
 
@@ -104,7 +112,18 @@ const AddProduct = () => {
                     </div>
                 </div>
 
-                <div className='flex flex-col w-full max-w-xs'></div>
+                <div className='flex flex-col w-full max-w-xs'>
+                    <label className='mb-2' htmlFor='rating'>Rating</label>
+                    <input
+                        className='border border-slate-300 rounded-md p-2 focus:outline-none focus:border-indigo-500'
+                        type="number"
+                        name='rating'
+                        id='rating'
+                        {...register("rating")}
+                        required
+                    />
+                </div>
+
                 <div className='flex flex-col w-full max-w-xs'>
                     <label className='mb-2' htmlFor='keyFeature1'>
                         Key Feature 1
@@ -115,6 +134,7 @@ const AddProduct = () => {
                         name='keyFeature1'
                         id='keyFeature1'
                         {...register("keyFeature1")}
+                        required
                     />
                 </div>
 
@@ -128,6 +148,7 @@ const AddProduct = () => {
                         name='keyFeature2'
                         id='keyFeature2'
                         {...register("keyFeature2")}
+                        required
                     />
                 </div>
 
@@ -141,6 +162,7 @@ const AddProduct = () => {
                         name='keyFeature3'
                         id='keyFeature3'
                         {...register("keyFeature3")}
+                        required
                     />
                 </div>
 
@@ -154,6 +176,7 @@ const AddProduct = () => {
                         name='keyFeature4'
                         id='keyFeature4'
                         {...register("keyFeature4")}
+                        required
                     />
                 </div>
 

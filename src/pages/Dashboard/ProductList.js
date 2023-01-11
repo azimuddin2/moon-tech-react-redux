@@ -3,15 +3,15 @@ import { useDispatch, useSelector } from 'react-redux';
 import loadProductData from '../../redux/thunk/products/fetchProducts';
 
 const ProductList = () => {
-    const products = useSelector((state) => state.product.products);
+  const products = useSelector((state) => state.product.products);
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(loadProductData());
   });
 
-    return (
-        <div class='flex flex-col justify-center items-center h-full w-full lg:px-12'>
+  return (
+    <div class='flex flex-col justify-center items-center h-full w-full lg:p-16'>
       <div class='w-full max-w-7xl mx-auto rounded-lg  bg-white shadow-lg border border-gray-200'>
         <header class='px-5 py-4 border-b border-gray-100'>
           <div class='font-semibold text-gray-800'>Products</div>
@@ -93,7 +93,7 @@ const ProductList = () => {
         </div>
       </div>
     </div>
-    );
+  );
 };
 
 export default ProductList;

@@ -22,7 +22,7 @@ const Sidebar = () => {
                 </li>
                 <li>
                     <Link to='add-product' className='flex items-center'>
-                        <MdPostAdd className='text-lg mr-1'></MdPostAdd>
+                        <MdPostAdd className='text-xl mr-1'></MdPostAdd>
                         <span> Add Product </span>
                     </Link>
                 </li>

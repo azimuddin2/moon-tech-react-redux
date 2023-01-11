@@ -1,4 +1,5 @@
 import {
+    ADD_PRODUCT,
     ADD_TO_CART,
     LOAD_PRODUCT,
     REMOVE_FROM_CART
@@ -11,6 +12,13 @@ export const loadProduct = (data) => {
         payload: data,
     };
 };
+
+export const addProduct = (data) => {
+    return {
+        type: ADD_PRODUCT,
+        payload: data,
+    }
+}
 
 export const addToCart = (product) => {
     return {
